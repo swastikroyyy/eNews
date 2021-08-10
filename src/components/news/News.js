@@ -7,10 +7,10 @@ const News = () => {
 
     useEffect(() => {
         let params = {
-
+            api_key: "fa8ad67d6c74459faaa9dea33bb5731e",
             query: "microsoft"
         }
-        let api_url = `https://v2/everything?q=${encodeURIComponent(params.query)}&apiKey=${encodeURIComponent(params.api_key)}`
+        let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(params.query)}&apiKey=${encodeURIComponent(params.api_key)}`
 
         const data = async () => {
             await fetch(api_url,
@@ -42,10 +42,10 @@ const News = () => {
     const searchNews = () => {
 
         let params = {
-
+            api_key: "fa8ad67d6c74459faaa9dea33bb5731e",
             query: sear
         }
-        let api_url = `https://v2/everything?q=${encodeURIComponent(params.query)}&apiKey=${encodeURIComponent(params.api_key)}`
+        let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(params.query)}&apiKey=${encodeURIComponent(params.api_key)}`
 
         fetch(api_url,
             {
