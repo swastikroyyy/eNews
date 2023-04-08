@@ -11,18 +11,18 @@ const News = () => {
       query: "microsoft",
     };
     let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      params?.query
-    )}&apiKey=${encodeURIComponent(params?.api_key)}`;
+      params.query
+    )}&apiKey=${encodeURIComponent(params.api_key)}`;
 
     const data = async () => {
       await fetch(api_url, {
         method: "get",
       })
         .then((response) => {
-          return response?.json();
+          return response.json();
         })
         .then((res) => {
-        //  console.log(res)
+        
           setNews(res?.articles);
         });
     };
@@ -40,8 +40,8 @@ const News = () => {
       query: sear,
     };
     let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      params?.query
-    )}&apiKey=${encodeURIComponent(params?.api_key)}`;
+      params.query
+    )}&apiKey=${encodeURIComponent(params.api_key)}`;
 
     fetch(api_url, {
       method: "get",
@@ -51,9 +51,9 @@ const News = () => {
         return response.json();
       })
       .then((res) => {
-        // console.log(res.articles);
+        
         setNews(res?.articles);
-        if (res?.articles?.length === 0) {
+        if (res.articles.length === 0) {
           setSear("");
         }
       });
