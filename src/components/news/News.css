@@ -1,11 +1,11 @@
 body {
-  background-color: lightgray;
+  background-color: rgba(0, 0, 0, 0.398);
 }
 
 .article {
   padding-top: 30px;
   padding-bottom: 20px;
-  width: 100%;
+  /* width: 100%; */
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
@@ -65,7 +65,7 @@ p:nth-child(3) {
   cursor: pointer;
   border: none;
   color: white;
-  background-color: lime;
+  background-color: #722F37;
   font-family: "Segoe UI";
   padding-left: 10px;
   padding-right: 10px;
@@ -78,7 +78,8 @@ p:nth-child(3) {
   outline: none;
 }
 button:hover {
-  background-color: green;
+  background-color: #25080b !important;
+  
 }
 .search {
   border-radius: 10px;
