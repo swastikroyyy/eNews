@@ -11,26 +11,26 @@ const News = () => {
       query: "microsoft",
     };
     let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      params.query
-    )}&apiKey=${encodeURIComponent(params.api_key)}`;
+      params?.query
+    )}&apiKey=${encodeURIComponent(params?.api_key)}`;
 
     const data = async () => {
       await fetch(api_url, {
         method: "get",
       })
         .then((response) => {
-          return response.json();
+          return response?.json();
         })
         .then((res) => {
-         console.log(res)
-          setNews(res.articles);
+        //  console.log(res)
+          setNews(res?.articles);
         });
     };
 
     data();
   }, []);
   const realValue = (e) => {
-    setSear(e.target.value);
+    setSear(e?.target?.value);
     
   };
  
@@ -40,8 +40,8 @@ const News = () => {
       query: sear,
     };
     let api_url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
-      params.query
-    )}&apiKey=${encodeURIComponent(params.api_key)}`;
+      params?.query
+    )}&apiKey=${encodeURIComponent(params?.api_key)}`;
 
     fetch(api_url, {
       method: "get",
@@ -51,9 +51,9 @@ const News = () => {
         return response.json();
       })
       .then((res) => {
-        console.log(res.articles);
-        setNews(res.articles);
-        if (res.articles.length === 0) {
+        // console.log(res.articles);
+        setNews(res?.articles);
+        if (res?.articles?.length === 0) {
           setSear("");
         }
       });
@@ -75,21 +75,21 @@ const News = () => {
         </button>
         <h1>All News</h1>
 
-        {news.length ? 
+        {news?.length ? 
          (
           news.map((con, index) => {
             return (
               <div key={index} className="art">
                 <div className="pa">
                   <div className="ni">
-                    <img className="img" src={con.urlToImage} alt="img"></img>
+                    <img className="img" src={con?.urlToImage} alt="img"></img>
                   </div>
                   <div className="nd">
-                    <h2>{con.title}</h2>
-                    <p>{con.author}</p>
-                    <p>{con.description}</p>
+                    <h2>{con?.title}</h2>
+                    <p>{con?.author}</p>
+                    <p>{con?.description}</p>
                     <p>
-                      <a href={con.url} target="blank">
+                      <a href={con?.url} target="blank">
                         <button className="button">Read More</button>
                       </a>
                     </p>
